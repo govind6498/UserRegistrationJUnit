@@ -76,5 +76,11 @@ public class UserValidationTest {
 		boolean isValid = userValidation.validateMobileNumber("91 979836430");
 		Assert.assertFalse(isValid);
 	}
-
+	@Test
+	public void givenPassword_WhenProper_ShouldReturnTrue() {
+		UserValidation userValidation =new UserValidation();
+		boolean isValid = userValidation.validatePassword("Govind@12345");
+		Assert.assertTrue(isValid);
+	}
+	
 }
