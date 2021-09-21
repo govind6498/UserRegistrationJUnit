@@ -52,11 +52,29 @@ public class UserValidationTest {
 		boolean isValid = userValidation.validateEmail("govindsingh6498gmail.com");
 		Assert.assertFalse(isValid);
 	}
-//	@Test
-//	public void givnnEmail_WhenLesserThanThreeCharcaters_ShouldReturnFalse() {
-//		UserValidation userValidation = new UserValidation();
-//		boolean isNotValid = userValidation.validateEmail("");
-//		Assert.assertFalse(isNotValid);
-//	}
+	@Test
+	public void givenMobileNumber_WhenProper_ShouldReturnTrue() {
+		UserValidation userValidation =new UserValidation();
+		boolean isValid = userValidation.validateMobileNumber("91 9798364309");
+		Assert.assertTrue(isValid);
+	}
+	@Test
+	public void givenMobileNumber_WhenNoSpace_ShouldReturnFalse() {
+		UserValidation userValidation =new UserValidation();
+		boolean isValid = userValidation.validateMobileNumber("919798364309");
+		Assert.assertFalse(isValid);
+	}
+	@Test
+	public void givenMobileNumber_WhenGreaterThanTenDigit_ShouldReturnFalse() {
+		UserValidation userValidation =new UserValidation();
+		boolean isValid = userValidation.validateMobileNumber("91 97983643091");
+		Assert.assertFalse(isValid);
+	}
+	@Test
+	public void givenMobileNumber_WhenLessThanTenDigit_ShouldReturnFalse() {
+		UserValidation userValidation =new UserValidation();
+		boolean isValid = userValidation.validateMobileNumber("91 979836430");
+		Assert.assertFalse(isValid);
+	}
 
 }
