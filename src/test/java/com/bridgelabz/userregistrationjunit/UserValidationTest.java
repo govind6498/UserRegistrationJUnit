@@ -83,4 +83,12 @@ public class UserValidationTest {
 		Assert.assertTrue(isValid);
 	}
 	
+	@Test
+	public void givenPassword_WhenNoUpperCharacter_ShouldReturnFalse() {
+		UserValidation userValidation =new UserValidation();
+		boolean isValid = userValidation.validatePassword("gond8063sljg45");
+		Assert.assertFalse(isValid);
+	}
+
+	
 }
