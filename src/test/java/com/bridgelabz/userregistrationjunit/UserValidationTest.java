@@ -40,5 +40,23 @@ public class UserValidationTest {
 		boolean isNotValid = userValidation.validateName("ku");
 		Assert.assertFalse(isNotValid);
 	}
+	@Test
+	public void givenEmailAddress_WhenProper_ShouldReturnTrue() {
+		UserValidation userValidation =new UserValidation();
+		boolean isValid = userValidation.validateEmail("govindsingh6498@gmail.com");
+		Assert.assertTrue(isValid);
+	}
+	@Test
+	public void givenEmailAddress_WhenNotProper_ShouldReturnFalse() {
+		UserValidation userValidation =new UserValidation();
+		boolean isValid = userValidation.validateEmail("govindsingh6498gmail.com");
+		Assert.assertFalse(isValid);
+	}
+//	@Test
+//	public void givnnEmail_WhenLesserThanThreeCharcaters_ShouldReturnFalse() {
+//		UserValidation userValidation = new UserValidation();
+//		boolean isNotValid = userValidation.validateEmail("");
+//		Assert.assertFalse(isNotValid);
+//	}
 
 }
