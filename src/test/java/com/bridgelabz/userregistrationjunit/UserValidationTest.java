@@ -89,6 +89,12 @@ public class UserValidationTest {
 		boolean isValid = userValidation.validatePassword("gond8063sljg45");
 		Assert.assertFalse(isValid);
 	}
-
+	
+	@Test
+	public void givenPassword_WhenNoNumberCharacter_ShouldReturnFalse() {
+		UserValidation userValidation =new UserValidation();
+		boolean isValid = userValidation.validatePassword("gonkfjgsljg");
+		Assert.assertFalse(isValid);
+	}
 	
 }
