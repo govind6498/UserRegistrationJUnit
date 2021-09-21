@@ -17,9 +17,27 @@ public class UserValidationTest {
 		Assert.assertFalse(isNotValid);
 	}
 	@Test
-	public void givneLastName_WhenLesserThanThreeCharcaters_ShouldReturnFalse() {
+	public void givneFirstName_WhenLesserThanThreeCharcaters_ShouldReturnFalse() {
 		UserValidation userValidation = new UserValidation();
 		boolean isNotValid = userValidation.validateName("go");
+		Assert.assertFalse(isNotValid);
+	}
+	@Test
+	public void givenLastName_WhenProper_ShouldReturnTrue() {
+		UserValidation userValidation =new UserValidation();
+		boolean isValid = userValidation.validateName("Kumar");
+		Assert.assertTrue(isValid);
+	}
+	@Test
+	public void givenLastName_WhenFirstLetterIsSmall_ShouldReturnFalse() {
+		UserValidation userValidation =new UserValidation();
+		boolean isNotValid = userValidation.validateName("kumar");
+		Assert.assertFalse(isNotValid);
+	}
+	@Test
+	public void givneLastName_WhenLesserThanThreeCharcaters_ShouldReturnFalse() {
+		UserValidation userValidation = new UserValidation();
+		boolean isNotValid = userValidation.validateName("ku");
 		Assert.assertFalse(isNotValid);
 	}
 
